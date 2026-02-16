@@ -1,10 +1,12 @@
 import './App.css';
+import UseReducer from './app/UseReducer';
 import UseState from './app/UseState';
 
 function App() {
   return (
     <div >
-      <UseState />
+      {/* <UseState /> */}
+      <UseReducer />
     </div>
   );
 }
