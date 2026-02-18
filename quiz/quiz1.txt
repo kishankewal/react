@@ -1,0 +1,74 @@
+1. What is "state" in React?
+D) A lifecycle method
+
+2. Which hook is used to add state in a functional component?
+C) useState
+
+3. What does useState return?
+C) An array with value and setter function
+
+4. When state changes, what happens?
+B) Component re-renders
+
+5. Is state mutable directly in React?
+A) Yes
+
+6. What is wrong in this code?
+Ans. We are not using setCount to mutate the state. Yes you can change the value but react will not react on this because it does not have context.
+
+7. What is the correct way to increase count by 1?
+Ans. setCount(count + 1);
+
+8. If you call setCount(5), will React update immediately?
+Ans. No 
+
+9. Why is this better in some cases?
+setCount(prev => prev + 1);
+Ans. In this case state will be updated immediately instead of waiting for component lifecycle finish.
+
+10. How do you update an object state properly?
+const [user, setUser] = useState({ name: "John", age: 25 });
+Ans. {
+    setUser({...user, age : 26})
+}
+
+11. Is it better to keep unrelated data in separate state variables?
+Ans. Yes
+
+12. What is derived state?
+Ans. B) State calculated from another state
+
+13. Should we store this in state?
+A) Yes
+Because react does not have context if fullName value is changed
+
+14. What problem can happen if you update state inside another state setter without care?
+Ans. We can be stuck in infinite loop. For example useEffect will be stuck in loop if use it badly
+
+15. When should you prefer useReducer over useState?
+B) For complex state logic
+Ans. I think the best case is where we have related data of state in that case useReducer is a game changer.
+    Like if want to use it for change the value in an object. Make todo apps, make counter. Auth. So much useful
+
+16. What are the 3 main parts of useReducer?
+Ans.1 useReducer return two things : current value (state), and calling functions or cases in reducer (dispatch)
+    2. useReducer takes two parameters. reducer function, current value
+    3. reducer function can mutate the state according to dispatch 
+    4. useReducer is useful for handling complex state management
+
+17. In reducer function, what must you always return?
+Ans. B) Updated state
+
+18. What is "lifting state up"?
+Ans. I don't know. Heard first time.
+
+19. Does updating state inside useEffect cause re-render?
+A) Yes
+
+20. What is the main difference between useState and useRef regarding re-rendering?
+Ans.
+    1. useState is used for storing and changing the state value.
+    2. useState is triggers re render.
+    
+    1. useRef is used for getting the reference of input element. Like document.getElementById.
+    2. It does not triggers re render and update silently
